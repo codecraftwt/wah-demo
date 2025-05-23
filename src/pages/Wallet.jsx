@@ -1,17 +1,17 @@
 import React from 'react';
 import { Container, Typography } from '@mui/material';
 
-const Home = () => {
+const Wallet = () => {
   return (
-    <Container sx={{ padding: '20px', minHeight: '100%' }}>
+    <Container sx={{ padding: '20px' }}>
       <Typography variant="h4" component="h1" gutterBottom>
-        Wah! Home
+        Wallet
       </Typography>
       <Typography variant="body1">
-        Welcome to the Wah! homepage.
+        Manage your payments and transactions.
       </Typography>
     </Container>
   );
 };
 
-export default Home;
+export default Wallet;

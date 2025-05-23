@@ -1,1 +1,1 @@
-export const NAV_LINKS = ['My Stuff', 'Wallet', 'Communities', 'Chat'];
+export const NAV_LINKS = ['Wah!','My Stuff', 'Wallet', 'Communities', 'Chat'];
