@@ -72,6 +72,7 @@ const LogoContainer = styled(Box)({
 const StyledNavLink = styled(NavLink)(({ theme }) => ({
   textDecoration: "none",
   color: "black",
+  fontWeight: "800",
   position: "relative",
   "&.active": {
     fontWeight: "800",
@@ -268,7 +269,7 @@ const Navbar = () => {
                   fontFamily: "'Poppins', sans-serif",
                   color: "#f28c38",
                   fontWeight: 500,
-                  marginTop:"-0.7rem"
+                  marginTop: "-0.7rem",
                 }}
               >
                 Smart Deals
@@ -296,6 +297,7 @@ const Navbar = () => {
               key={link}
               sx={{
                 padding: "0 12px",
+                fontWeight: 800,
                 whiteSpace: "nowrap",
               }}
             >
@@ -310,6 +312,7 @@ const Navbar = () => {
                   primary={link}
                   sx={{
                     color: "inherit",
+                    fontWeight: 800,
                     fontFamily: '"Poppins", sans-serif',
                     typography: { md: "body2" },
                   }}
@@ -331,14 +334,10 @@ const Navbar = () => {
         </Search>
 
         {/* Cart Icon */}
-        <IconButton
-          sx={{
-          }}
-          aria-label="cart"
-        >
+        <IconButton sx={{}} aria-label="cart">
           <FavoriteBorderIcon
             sx={{
-              fontSize: {xs:24,sm:32},
+              fontSize: { xs: 24, sm: 32 },
               color: "gray",
               transition: "color 0.3s ease, transform 0.3s ease",
               "&:hover": {
@@ -357,8 +356,8 @@ const Navbar = () => {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            height: {xs:30,sm:40},
-            width: {xs:30,sm:40},
+            height: { xs: 30, sm: 40 },
+            width: { xs: 30, sm: 40 },
             boxShadow: "0 4px 12px rgba(0, 0, 0, 0.2)",
             transition: "transform 0.3s ease, box-shadow 0.3s ease",
             cursor: "pointer",
@@ -370,8 +369,8 @@ const Navbar = () => {
         >
           <PersonOutlineOutlinedIcon
             sx={{
-              height: {xs:"20px",sm:"30px"},
-              width: {xs:"20px",sm:"30px"},
+              height: { xs: "20px", sm: "30px" },
+              width: { xs: "20px", sm: "30px" },
               color: "black",
             }}
           />

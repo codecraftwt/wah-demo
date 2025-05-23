@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import Marquee from 'react-fast-marquee';
+import Marquee from "react-fast-marquee";
 import {
   Box,
   Typography,
@@ -130,7 +130,7 @@ const ReviewBlock = () => {
   return (
     <Box
       sx={{
-        display: {xs:"none", sm:"flex"},
+        display: { xs: "none", sm: "flex" },
         flexDirection: { xs: "column", sm: "row" },
         gap: { xs: 3, sm: 4 },
         alignItems: "center",
@@ -791,15 +791,21 @@ const Home = ({ addtoCart, userId, isLoggedIn }) => {
             <ReviewBlock />
           </Box>
         </Box>
-        <Grid container spacing={2}>
-          <Marquee speed={50}>
-            {ProductData.map(item => (
-              <Grid item xs={12} sm={6} md={4} lg={3} key={item.id}>
-                <ProductCard {...item} />
-              </Grid>
-            ))}
-          </Marquee>
-        </Grid>
+        <Box>
+          <Box sx={{display:"flex", mb:"4rem"}}>
+            <Box sx={{height:"2rem", width:"10px", backgroundColor:"#f28c38"}}></Box>
+            <Typography variant="h5" color="#f28c38" fontWeight={"600"} ml={2}>Similar Deals</Typography>
+          </Box>
+          <Grid container spacing={2}>
+            <Marquee speed={50}>
+              {ProductData.map(item => (
+                <Grid item xs={12} sm={6} md={4} lg={3} key={item.id}>
+                  <ProductCard {...item} />
+                </Grid>
+              ))}
+            </Marquee>
+          </Grid>
+        </Box>
       </Box>
     </Container>
   );
