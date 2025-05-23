@@ -6,7 +6,7 @@ const theme = createTheme({
       main: '#1976d2', // MUI's default primary color
     },
     secondary: {
-      main: '#dc004e',
+      main: '#f28c38',
     },
     background: {
       default: '#f5f5f5',

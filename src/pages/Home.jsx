@@ -40,12 +40,12 @@ const staticProduct = {
   numReviews: 120,
 };
 
-
 const Home = () => {
   const [mainImageIndex, setMainImageIndex] = useState(0);
   const theme = useTheme();
   const [selectedDiscount, setSelectedDiscount] = useState("fiftyPercent");
   const [selectedServices, setSelectedServices] = useState([]);
+  const [mainImage, setMainImage] = useState(staticProduct.images[0]);
 
   const handleCheckboxChange = event => {
     const { name, checked } = event.target;
@@ -122,36 +122,22 @@ const Home = () => {
                     src={image}
                     alt={`Thumbnail ${index + 1}`}
                     sx={{
-                      [theme.breakpoints.up("xs")]: {
-                        width: 60,
-                        height: 60,
-                        marginTop: "1rem",
-                      },
-                      [theme.breakpoints.up("400")]: {
-                        width: 90,
-                        height: 90,
-                      },
-                      [theme.breakpoints.up("sm")]: {
-                        width: 100,
-                        height: 100,
-                      },
+                      width: { xs: 60, sm: 100 },
+                      height: { xs: 60, sm: 100 },
                       objectFit: "cover",
                       borderRadius: 1,
-                      border:
-                        mainImageIndex === index + 1
-                          ? "2px solid #f28c38"
-                          : "1px solid grey",
+                      border: "1px solid grey",
                       cursor: "pointer",
                       "&:hover": { border: "2px solid #f28c38" },
                     }}
-                    onClick={() => handleThumbnailClick(index + 1)}
+                    onClick={() => setMainImage(image)}
                   />
                 ))}
               </Box>
               <Box
                 component="img"
-                src={staticProduct.images[mainImageIndex]}
-                alt={`Main Product Image ${mainImageIndex + 1}`}
+                src={mainImage}
+                alt="Main Product Image"
                 sx={{
                   width: "100%",
                   maxHeight: 430,
@@ -531,18 +517,24 @@ const Home = () => {
           </Box>
         </Box>
         <Box>
-          <Box sx={{display:"flex", mb:"4rem"}}>
-            <Box sx={{height:"2rem", width:"10px", backgroundColor:"#f28c38"}}></Box>
-            <Typography variant="h5" color="#f28c38" fontWeight={"600"} ml={2}>Similar Deals</Typography>
+          <Box sx={{ display: "flex", mb: "4rem" }}>
+            <Box
+              sx={{ height: "2rem", width: "10px", backgroundColor: "#f28c38" }}
+            ></Box>
+            <Typography variant="h5" color="#f28c38" fontWeight={"600"} ml={2}>
+              Similar Deals
+            </Typography>
           </Box>
-          <Grid container spacing={2}>
-            <Marquee speed={50}>
-              {ProductData.map(item => (
-                <Grid item xs={12} sm={6} md={4} lg={3} key={item.id}>
-                  <ProductCard {...item} />
-                </Grid>
-              ))}
-            </Marquee>
+          <Grid
+            container
+            spacing={2}
+            justifyContent={{ xs: "center", sm: "flex-start" }}
+          >
+            {ProductData.map(item => (
+              <Grid item xs={12} sm={6} md={4} lg={3} key={item.id}>
+                <ProductCard {...item} />
+              </Grid>
+            ))}
           </Grid>
         </Box>
       </Box>

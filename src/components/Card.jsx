@@ -27,7 +27,6 @@ const ProductCard = ({
         position: "relative",
         overflow: "hidden",
         mb:2,
-        mx:2
       }}
     >
       {/* Image Section */}
