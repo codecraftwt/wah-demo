@@ -278,7 +278,7 @@ const Navbar = () => {
         </LogoContainer>
 
         {/* Spacer */}
-        <Box sx={{ flexGrow: 0.5 }} />
+        <Box sx={{ flexGrow: 0.7 }} />
 
         {/* Navigation Links */}
         <List
@@ -333,13 +333,12 @@ const Navbar = () => {
         {/* Cart Icon */}
         <IconButton
           sx={{
-            marginRight: { xs: 0, sm: 1 },
           }}
           aria-label="cart"
         >
           <FavoriteBorderIcon
             sx={{
-              fontSize: 32,
+              fontSize: {xs:24,sm:32},
               color: "gray",
               transition: "color 0.3s ease, transform 0.3s ease",
               "&:hover": {
@@ -358,8 +357,8 @@ const Navbar = () => {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            height: 40,
-            width: 40,
+            height: {xs:30,sm:40},
+            width: {xs:30,sm:40},
             boxShadow: "0 4px 12px rgba(0, 0, 0, 0.2)",
             transition: "transform 0.3s ease, box-shadow 0.3s ease",
             cursor: "pointer",
@@ -371,8 +370,8 @@ const Navbar = () => {
         >
           <PersonOutlineOutlinedIcon
             sx={{
-              height: "30px",
-              width: "30px",
+              height: {xs:"20px",sm:"30px"},
+              width: {xs:"20px",sm:"30px"},
               color: "black",
             }}
           />
