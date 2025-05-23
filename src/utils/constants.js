@@ -1,0 +1,1 @@
+export const NAV_LINKS = ['My Stuff', 'Wallet', 'Communities', 'Chat'];
